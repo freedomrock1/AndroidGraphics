@@ -33,14 +33,13 @@
 
         <Button
             android:id="@+id/btnAniZero"
-            android:layout_width="348dp"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
+
             android:onClick="onClickButton"
 
             android:text="Animation Zero"
-            tools:layout_editor_absoluteX="51dp"
-            tools:layout_editor_absoluteY="187dp" />
+ />
     </TableRow>
     <TableRow>
 
@@ -59,8 +58,7 @@
             android:layout_height="wrap_content"
             android:onClick="onClickButton"
             android:text="Custom View"
-            tools:layout_editor_absoluteX="51dp"
-            tools:layout_editor_absoluteY="187dp" />
+ />
     </TableRow>
     <TableRow>
 
@@ -70,8 +68,7 @@
             android:layout_height="wrap_content"
             android:onClick="onClickButton"
             android:text="Dotty App"
-            tools:layout_editor_absoluteX="52dp"
-            tools:layout_editor_absoluteY="91dp" />
+ />
 
         <Button
             android:id="@+id/btnCustomView2"
@@ -79,8 +76,7 @@
             android:layout_height="wrap_content"
             android:onClick="onClickButton"
             android:text="Custom View 2"
-            tools:layout_editor_absoluteX="51dp"
-            tools:layout_editor_absoluteY="187dp" />
+             />
 
     </TableRow>
 

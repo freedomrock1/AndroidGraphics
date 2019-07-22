@@ -1,5 +1,8 @@
 package edu.csc4360.graphics;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ObjectAnimator;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -40,8 +43,12 @@ public class DottyAppActivity extends AppCompatActivity {
             // If done selecting dots then replace selected dots and display new moves and score
             if (status == DotsGrid.DotSelectionStatus.Last) {
                 if (mGame.getSelectedDots().size() > 1) {
-                    mGame.finishMove();
-                    updateMovesAndScore();
+                    mDotsGrid.animateDots();
+
+
+                    // These methods must be called AFTER the animation completes
+//                    mGame.finishMove();
+//                    updateMovesAndScore();
                 } else {
                     mGame.clearSelectedDots();
                 }
@@ -50,10 +57,38 @@ public class DottyAppActivity extends AppCompatActivity {
             // Display changes to the game
             mDotsGrid.invalidate();
         }
+        @Override
+        public void onAnimationFinished() {
+            mGame.finishMove();
+            mDotsGrid.invalidate();
+            updateMovesAndScore();
+        }
     };
 
     public void newGameClick(View view) {
-        newGame();
+        newGameClickAni(view);
+        //newGame();
+    }
+
+    public void newGameClickAni(View view) {
+
+        // Animate down off screen
+        ObjectAnimator moveBoardOff = ObjectAnimator.ofFloat(mDotsGrid,
+                "translationY", mDotsGrid.getHeight() * 1.5f);
+        moveBoardOff.setDuration(700);
+        moveBoardOff.start();
+
+        moveBoardOff.addListener(new AnimatorListenerAdapter() {
+            public void onAnimationEnd(Animator animation) {
+                newGame();
+
+                // Animate from above the screen down to default location
+                ObjectAnimator moveBoardOn = ObjectAnimator.ofFloat(mDotsGrid,
+                        "translationY", mDotsGrid.getHeight() * -1.5f, 0);
+                moveBoardOn.setDuration(700);
+                moveBoardOn.start();
+            }
+        });
     }
 
     private void newGame() {
@@ -66,5 +101,17 @@ public class DottyAppActivity extends AppCompatActivity {
         mMovesRemaining.setText(Integer.toString(mGame.getMovesLeft()));
         mScore.setText(Integer.toString(mGame.getScore()));
     }
+
+    private void pause(){
+
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+
 
 }
