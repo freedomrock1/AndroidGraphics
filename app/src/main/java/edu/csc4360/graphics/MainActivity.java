@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(MainActivity.this, DottyAppActivity.class);
                 break;
 
-            case "btnCustom2View":
+            case "btnCustomView2":
                 intent = new Intent(MainActivity.this, CustomView2Activity.class);
                 break;
 
