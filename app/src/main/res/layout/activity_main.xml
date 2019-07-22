@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </TableRow>
+
+    <TableRow>
+
+        <Button
+            android:id="@+id/btnHello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickButton"
+            android:text="Hello"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="91dp" />
+
+        <Button
+            android:id="@+id/btnAniZero"
+            android:layout_width="348dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:onClick="onClickButton"
+
+            android:text="Animation Zero"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="187dp" />
+    </TableRow>
+    <TableRow>
+
+        <Button
+            android:id="@+id/btnAniP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickButton"
+            android:text="Property Animations"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="91dp" />
+
+        <Button
+            android:id="@+id/btnCustomView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickButton"
+            android:text="Custom View"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="187dp" />
+    </TableRow>
+    <TableRow>
+
+        <Button
+            android:id="@+id/btnDotty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickButton"
+            android:text="Dotty App"
+            tools:layout_editor_absoluteX="52dp"
+            tools:layout_editor_absoluteY="91dp" />
+
+        <Button
+            android:id="@+id/btnCustomView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onClickButton"
+            android:text="Custom View 2"
+            tools:layout_editor_absoluteX="51dp"
+            tools:layout_editor_absoluteY="187dp" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvCurrentTag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </TableRow>
+</TableLayout>
